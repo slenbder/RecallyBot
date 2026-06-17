@@ -16,6 +16,7 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s %(levelname)-8s %(name)s: %(message)s",
 )
+logging.getLogger("httpx").setLevel(logging.WARNING)
 log = logging.getLogger(__name__)
 
 
@@ -37,8 +38,13 @@ def process_message(mb: MailBox, msg, storage: Storage) -> None:
         else:
             log.info("Duplicate review skipped (uid=%s)", msg.uid)
     else:
-        # No parser matched or parser returned None — raw fallback (invariant #2)
-        send_raw(hint, msg.subject or "(no subject)")
+        # No parser matched or parser returned None — raw fallback (invariant #2).
+        # Dedup by Message-ID so a crash between send and mark_seen never double-sends.
+        raw_key = "raw|" + (msg.headers.get("message-id", [msg.uid])[0])
+        if storage.is_new_key(raw_key):
+            send_raw(hint, msg.subject or "(no subject)")
+        else:
+            log.info("Duplicate raw fallback skipped (uid=%s)", msg.uid)
 
     # Mark seen ONLY after a successful Telegram send (invariant #1)
     mark_seen(mb, msg)

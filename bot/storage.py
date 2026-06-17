@@ -8,6 +8,7 @@ from .models import Review
 
 
 class Storage:
+
     def __init__(self, db_path: str) -> None:
         self._conn = sqlite3.connect(db_path, check_same_thread=False)
         self._conn.execute("PRAGMA journal_mode=WAL")
@@ -27,14 +28,17 @@ class Storage:
         """)
         self._conn.commit()
 
-    def is_new(self, review: Review) -> bool:
-        """Insert dedup record. Returns True only when the row is genuinely new."""
+    def is_new_key(self, key: str) -> bool:
+        """Generic dedup: returns True only on first insertion of key."""
         cur = self._conn.execute(
             "INSERT OR IGNORE INTO seen_reviews (dedup_key, created_at) VALUES (?, ?)",
-            (review.dedup_key, _now()),
+            (key, _now()),
         )
         self._conn.commit()
         return cur.rowcount == 1
+
+    def is_new(self, review: Review) -> bool:
+        return self.is_new_key(review.dedup_key)
 
     def record_heartbeat(self) -> None:
         self._conn.execute(

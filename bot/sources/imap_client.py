@@ -4,7 +4,7 @@ import logging
 from collections.abc import Generator
 from contextlib import contextmanager
 
-from imap_tools import MailBox, MailMessage, AND
+from imap_tools import MailBox, MailMessage, MailMessageFlags, AND
 
 from ..config import settings
 
@@ -25,4 +25,4 @@ def fetch_unseen(mb: MailBox) -> list[MailMessage]:
 
 
 def mark_seen(mb: MailBox, msg: MailMessage) -> None:
-    mb.seen([msg.uid], True)
+    mb.flag(msg.uid, [MailMessageFlags.SEEN], True)
