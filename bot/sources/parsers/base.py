@@ -10,5 +10,8 @@ from ...models import Review
 class Parser(Protocol):
     source: str
 
+    def is_review(self, msg: MailMessage) -> bool:
+        ...
+
     def parse(self, msg: MailMessage) -> Review | None:
         ...

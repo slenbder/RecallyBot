@@ -13,13 +13,13 @@ from bot.sources.parsers.google import GoogleParser
 from bot.sources.router import resolve, source_hint
 
 FIXTURES_DIR = Path(__file__).parent / "fixtures"
+DGIS_FIXTURE = FIXTURES_DIR / "dgis_review_1.eml"
 
 _PARSERS = [YandexParser(), DgisParser(), GoogleParser()]
 
 
 def _load_eml(path: Path) -> MailMessage:
     raw = path.read_bytes()
-    msg = email.message_from_bytes(raw)
     return MailMessage.from_bytes(raw)
 
 
@@ -30,7 +30,7 @@ def _eml_files() -> list[Path]:
 
 
 # ---------------------------------------------------------------------------
-# Stub smoke-tests: parsers must return None (current milestone behaviour)
+# Stub smoke-tests: parsers without fixtures must return None
 # ---------------------------------------------------------------------------
 
 @pytest.mark.parametrize("parser", _PARSERS, ids=lambda p: p.source)
@@ -39,9 +39,9 @@ def test_parser_returns_none_for_missing_fixtures(parser):
     files = [f for f in _eml_files() if parser.source in f.name]
     if files:
         pytest.skip(f"Fixture found for {parser.source} — implement parser first")
-    # Nothing to parse → just assert the parser exists and has the right interface
     assert hasattr(parser, "source")
     assert callable(parser.parse)
+    assert callable(parser.is_review)
 
 
 @pytest.mark.skipif(not _eml_files(), reason="No .eml fixtures in tests/fixtures/")
@@ -62,6 +62,27 @@ def test_stub_parsers_return_none(eml_path: Path):
     if parser is None:
         pytest.skip("No parser matched — router test covers this")
     result = parser.parse(msg)
-    assert result is None, (
-        f"{parser.source}.parse() returned {result!r} — update this test once implemented"
-    )
+    if result is not None:
+        pytest.skip(f"{parser.source} parser is now implemented — see dedicated test")
+    assert result is None
+
+
+# ---------------------------------------------------------------------------
+# 2GIS review fixture
+# ---------------------------------------------------------------------------
+
+@pytest.mark.skipif(not DGIS_FIXTURE.exists(), reason="dgis_review_1.eml not found")
+def test_dgis_review_1():
+    msg = _load_eml(DGIS_FIXTURE)
+    parser = DgisParser()
+
+    assert parser.is_review(msg) is True
+
+    review = parser.parse(msg)
+    assert review is not None
+    assert review.source == "dgis"
+    assert review.author
+    assert review.text.startswith("В восторге")
+    assert "притяжения Французская" in review.text
+    assert review.url and "account.2gis.com" in review.url
+    assert review.rating == 5

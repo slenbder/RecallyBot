@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import html
 import logging
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 import httpx
 
@@ -16,35 +18,73 @@ _SOURCE_NAMES: dict[str, str] = {
     "google": "Google Maps",
 }
 
+_MONTHS = [
+    "января", "февраля", "марта", "апреля", "мая", "июня",
+    "июля", "августа", "сентября", "октября", "ноября", "декабря",
+]
+
 _API_BASE = "https://api.telegram.org/bot{token}/sendMessage"
-
-
-def _stars(rating: int | None) -> str:
-    if rating is None:
-        return ""
-    filled = "★" * rating
-    empty = "☆" * (5 - rating)
-    return f"{filled}{empty}  "
 
 
 def _escape(text: str) -> str:
     return html.escape(text)
 
 
+def _polarity(rating: int | None) -> str:
+    if rating is None:
+        return "◽"
+    if rating >= 4:
+        return "🟢"
+    if rating == 3:
+        return "🟡"
+    return "🔴"
+
+
+def _stars(rating: int | None) -> str:
+    if rating is None:
+        return ""
+    return "★" * rating + "☆" * (5 - rating)
+
+
+def _human_date(date_str: str) -> str | None:
+    if not date_str:
+        return None
+    try:
+        dt = datetime.fromisoformat(date_str)
+        local = dt.astimezone(ZoneInfo(settings.display_timezone))
+        return f"{local.day} {_MONTHS[local.month - 1]} {local.year}, {local.strftime('%H:%M')}"
+    except Exception:
+        log.warning("Could not format date %r", date_str)
+        return None
+
+
 def send_review(review: Review) -> None:
     source_name = _SOURCE_NAMES.get(review.source, _escape(review.source))
-    stars = _stars(review.rating)
-    lines = [
-        f"<b>{source_name}</b>  {stars}",
-        f"<b>Автор:</b> {_escape(review.author)}",
-        f"<b>Дата:</b> {_escape(review.date)}",
-        "",
-        _escape(review.text),
-    ]
-    if review.url:
-        lines.append(f'\n<a href="{_escape(review.url)}">Открыть отзыв</a>')
+    polarity = _polarity(review.rating)
 
-    send_text("\n".join(lines))
+    if review.rating is None:
+        line1 = f"{polarity} <b>{source_name}</b>  оценка не распознана"
+    else:
+        line1 = f"{polarity} <b>{source_name}</b>  {_stars(review.rating)}"
+
+    parts = [line1]
+
+    if review.author:
+        parts.append(f"👤 <b>{_escape(review.author)}</b>")
+
+    hdate = _human_date(review.date)
+    if hdate:
+        parts.append(f"🕐 {hdate}")
+
+    if review.text:
+        parts.append("")
+        parts.append(f"«{_escape(review.text)}»")
+
+    if review.url:
+        parts.append("")
+        parts.append(f'🔗 <a href="{_escape(review.url)}">Открыть отзыв</a>')
+
+    send_text("\n".join(parts))
 
 
 def send_raw(source_hint: str, subject: str) -> None:

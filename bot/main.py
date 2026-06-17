@@ -25,26 +25,38 @@ def process_message(mb: MailBox, msg, storage: Storage) -> None:
     hint = source_hint(msg)
     parser = resolve(msg)
 
-    review = None
-    if parser is not None:
-        try:
-            review = parser.parse(msg)
-        except Exception:
-            log.exception("Parser %s raised for uid=%s", parser.source, msg.uid)
+    if parser is not None and not parser.is_review(msg):
+        # Known platform but not a review notification — ignore silently.
+        log.info("Known platform %s, not a review (uid=%s) — ignoring", parser.source, msg.uid)
+        mark_seen(mb, msg)
+        return
 
-    if review is not None:
-        if storage.is_new(review):
-            send_review(review)
-        else:
-            log.info("Duplicate review skipped (uid=%s)", msg.uid)
-    else:
-        # No parser matched or parser returned None — raw fallback (invariant #2).
+    if parser is None:
+        # Unknown sender in the folder — raw fallback (rare).
         # Dedup by Message-ID so a crash between send and mark_seen never double-sends.
         raw_key = "raw|" + (msg.headers.get("message-id", [msg.uid])[0])
         if storage.is_new_key(raw_key):
             send_raw(hint, msg.subject or "(no subject)")
         else:
             log.info("Duplicate raw fallback skipped (uid=%s)", msg.uid)
+    else:
+        review = None
+        try:
+            review = parser.parse(msg)
+        except Exception:
+            log.exception("Parser %s raised for uid=%s", parser.source, msg.uid)
+
+        if review is None:
+            # Looked like a review but parse failed — raw fallback.
+            raw_key = "raw|" + (msg.headers.get("message-id", [msg.uid])[0])
+            if storage.is_new_key(raw_key):
+                send_raw(hint, msg.subject or "(no subject)")
+            else:
+                log.info("Duplicate raw fallback skipped (uid=%s)", msg.uid)
+        elif storage.is_new(review):
+            send_review(review)
+        else:
+            log.info("Duplicate review skipped (uid=%s)", msg.uid)
 
     # Mark seen ONLY after a successful Telegram send (invariant #1)
     mark_seen(mb, msg)

@@ -21,6 +21,9 @@ class Settings(BaseSettings):
     poll_fallback_seconds: int = 60
     silence_alert_hours: int = 168
 
+    # Display
+    display_timezone: str = "Europe/Moscow"
+
     # Internal
     db_path: str = "reviews.db"
 

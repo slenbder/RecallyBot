@@ -8,6 +8,9 @@ from ...models import Review
 class GoogleParser:
     source = "google"
 
+    def is_review(self, msg: MailMessage) -> bool:
+        return False
+
     def parse(self, msg: MailMessage) -> Review | None:
         # TODO: implement once real .eml fixtures are available
         return None
