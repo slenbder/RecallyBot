@@ -111,3 +111,15 @@ def test_yandex_review_1():
     assert review.rating == 5
     assert review.text.startswith("Приятное во всех аспектах")
     assert review.url and "supersender.yandex.net" in review.url
+
+
+# ---------------------------------------------------------------------------
+# dedup_key regression
+# ---------------------------------------------------------------------------
+
+def test_dedup_key_none_safe():
+    """dedup_key must not raise when author and text are None (Yandex case)."""
+    from bot.models import Review
+    r = Review(source="yandex", author=None, date="", text=None)
+    key = r.dedup_key
+    assert isinstance(key, str) and len(key) > 0
