@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import base64
-import html
 import logging
 import re
 from urllib.parse import parse_qs, urlparse
@@ -9,6 +8,7 @@ from urllib.parse import parse_qs, urlparse
 from imap_tools import MailMessage
 
 from ...models import Review
+from .html_utils import get_html_soup, get_plain_text
 
 log = logging.getLogger(__name__)
 
@@ -21,8 +21,8 @@ class DgisParser:
     def is_review(self, msg: MailMessage) -> bool:
         if "отзыв" in (msg.subject or "").lower():
             return True
-        h = msg.html or ""
-        return 'class="stars"' in h
+        soup = get_html_soup(msg)
+        return soup is not None and soup.select_one("td.stars") is not None
 
     def parse(self, msg: MailMessage) -> Review | None:
         try:
@@ -32,7 +32,7 @@ class DgisParser:
             return None
 
     def _parse(self, msg: MailMessage) -> Review | None:
-        text = msg.text or ""
+        text = get_plain_text(msg)
         blocks = [b.strip() for b in re.split(r"\n{2,}", text) if b.strip()]
 
         header_idx = None
@@ -47,7 +47,8 @@ class DgisParser:
         author = blocks[header_idx + 1]
 
         # HTML extraction preserves correct word spacing lost in the text/plain block
-        review_text = _extract_review_text(msg.html or "") or blocks[header_idx + 2]
+        soup = get_html_soup(msg)
+        review_text = _extract_review_text(soup) or blocks[header_idx + 2]
 
         if not author or not review_text:
             return None
@@ -59,7 +60,7 @@ class DgisParser:
                 url = _decode_tracker_url(m.group(1))
                 break
 
-        rating = _extract_rating(msg.html or "")
+        rating = _extract_rating(soup)
         dt = msg.date.isoformat() if msg.date else ""
 
         return Review(
@@ -72,13 +73,14 @@ class DgisParser:
         )
 
 
-def _extract_review_text(raw_html: str) -> str | None:
-    """Return the review text from the first non-link <div class="text"> in the HTML."""
-    for raw in re.findall(r'<div class="text">(.*?)</div>', raw_html, re.DOTALL):
-        stripped = raw.strip()
-        if stripped and not stripped.startswith("<"):
-            return html.unescape(re.sub(r"\s+", " ", stripped))
-    return None
+def _extract_review_text(soup) -> str | None:
+    if soup is None:
+        return None
+    tag = soup.select_one("div.text")
+    if tag is None:
+        return None
+    text = tag.get_text(separator=" ").strip()
+    return re.sub(r"\s+", " ", text) if text else None
 
 
 def _decode_tracker_url(tracker_url: str) -> str:
@@ -95,13 +97,15 @@ def _decode_tracker_url(tracker_url: str) -> str:
         return tracker_url
 
 
-def _extract_rating(raw_html: str) -> int | None:
+def _extract_rating(soup) -> int | None:
     # ASSUMPTION pending a low-rating sample — we don't yet know
     # the empty-star hash or whether 4★ renders as 4 imgs or 5. Validate later.
-    m = re.search(
-        r'<td\b[^>]*class="stars"[^>]*>(.*?)</td>', raw_html, re.DOTALL | re.IGNORECASE
-    )
-    if not m:
+    if soup is None:
         return None
-    count = m.group(1).count(_FILLED_STAR_HASH)
+    td = soup.select_one("td.stars")
+    if td is None:
+        return None
+    count = sum(
+        _FILLED_STAR_HASH in (img.get("src") or "") for img in td.select("img")
+    )
     return count if 1 <= count <= 5 else None
