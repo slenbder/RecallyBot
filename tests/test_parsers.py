@@ -14,8 +14,13 @@ from bot.sources.router import resolve, source_hint
 
 FIXTURES_DIR = Path(__file__).parent / "fixtures"
 DGIS_FIXTURE = FIXTURES_DIR / "dgis_review_1.eml"
+YANDEX_FIXTURE = FIXTURES_DIR / "yandex_review_1.eml"
 
-_PARSERS = [YandexParser(), DgisParser(), GoogleParser()]
+# Parsers that are still stubs (no fixture, parse() returns None)
+_STUB_PARSERS = [GoogleParser()]
+
+# All parsers — used for router / smoke tests
+_ALL_PARSERS = [YandexParser(), DgisParser(), GoogleParser()]
 
 
 def _load_eml(path: Path) -> MailMessage:
@@ -30,12 +35,12 @@ def _eml_files() -> list[Path]:
 
 
 # ---------------------------------------------------------------------------
-# Stub smoke-tests: parsers without fixtures must return None
+# Stub smoke-tests: parsers without fixtures must expose the right interface
 # ---------------------------------------------------------------------------
 
-@pytest.mark.parametrize("parser", _PARSERS, ids=lambda p: p.source)
+@pytest.mark.parametrize("parser", _STUB_PARSERS, ids=lambda p: p.source)
 def test_parser_returns_none_for_missing_fixtures(parser):
-    """Each stub parser must return None when no .eml is available."""
+    """Stub parsers must expose the right interface and return None without crashing."""
     files = [f for f in _eml_files() if parser.source in f.name]
     if files:
         pytest.skip(f"Fixture found for {parser.source} — implement parser first")
@@ -86,3 +91,23 @@ def test_dgis_review_1():
     assert "притяжения Французская" in review.text
     assert review.url and "account.2gis.com" in review.url
     assert review.rating == 5
+
+
+# ---------------------------------------------------------------------------
+# Yandex review fixture
+# ---------------------------------------------------------------------------
+
+@pytest.mark.skipif(not YANDEX_FIXTURE.exists(), reason="yandex_review_1.eml not found")
+def test_yandex_review_1():
+    msg = _load_eml(YANDEX_FIXTURE)
+    parser = YandexParser()
+
+    assert parser.is_review(msg) is True
+
+    review = parser.parse(msg)
+    assert review is not None
+    assert review.source == "yandex"
+    assert review.author is None
+    assert review.rating == 5
+    assert review.text.startswith("Приятное во всех аспектах")
+    assert review.url and "supersender.yandex.net" in review.url

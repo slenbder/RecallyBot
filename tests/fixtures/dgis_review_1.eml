@@ -1,0 +1,1007 @@
+Received: from postback23a.mail.yandex.net (postback23a.mail.yandex.net [2a02:6b8:c0e:500:1:45:d181:da23])
+	by mail-notsolitesrv-production-main-49.vla.yp-c.yandex.net (notsolitesrv) with LMTPS id gH9lp7sZGSdq-vXgqQ4Qn
+	for <recallybot@yandex.ru>; Wed, 17 Jun 2026 16:08:26 +0300
+Received: from mail-nwsmtp-mxfront-production-main-79.vla.yp-c.yandex.net (mail-nwsmtp-mxfront-production-main-79.vla.yp-c.yandex.net [IPv6:2a02:6b8:c29:dc36:0:640:d615:0])
+	by postback23a.mail.yandex.net (Yandex) with ESMTPS id D37FAC0071
+	for <recallybot@yandex.ru>; Wed, 17 Jun 2026 16:08:26 +0300 (MSK)
+Received: from smtp2.sender.2gis.com (smtp2.sender.2gis.com [195.39.207.49])
+	by mail-nwsmtp-mxfront-production-main-79.vla.yp-c.yandex.net (mxfront) with ESMTP id Q8R0uHSZfiE0-IIIIAiZp;
+	Wed, 17 Jun 2026 16:08:26 +0300
+X-Yandex-Fwd: 1
+Authentication-Results: mail-nwsmtp-mxfront-production-main-79.vla.yp-c.yandex.net; spf=pass (mail-nwsmtp-mxfront-production-main-79.vla.yp-c.yandex.net: domain of sender.2gis.com designates 195.39.207.49 as permitted sender, rule=[exists:%{ir}.sender.2gis.com]) smtp.mail=postman5920583@sender.2gis.com; dkim=pass header.i=noreply@account.2gis.com
+X-Yandex-Spam: 1
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=gokey; d=account.2gis.com;
+ h=From:To:Message-Id:Subject:MIME-Version:Content-Type:List-Unsubscribe:Date:
+ no; i=noreply@account.2gis.com;
+ bh=Fh0i6FIz36+YdIf0DqqeCS2vnTXFM13jLFA4/TPrOJo=;
+ b=loSjT1059wzvfapRt+mIQkTE7jlvWuJ8MTSzYlLvhjNCbR9xtHp+nPk58XjRqUCSnQexwL7zuDF5
+   iSkI4zfoGZVGHYQZOU9+bGzK0wHBCci5JGWb6d+cpOqE8DXQpONtH5TS+CfNzPklWxBIWSbRSm9t
+   sMuWwDCloULUS1OVEwI=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=uni; d=themailer.ru;
+ h=From:To:Message-Id:Subject:MIME-Version:Content-Type:List-Unsubscribe:Date;
+ bh=Fh0i6FIz36+YdIf0DqqeCS2vnTXFM13jLFA4/TPrOJo=;
+ b=Uc9j9l2AThEUCsMnPPdQKGTEGqz7rnbv+Z3ftMT6RCNmf5hZIoAI4Dfz72+7kuVRJtUZODxxGoPA
+   ccQvMXW26gYOVjsG2clnHNlLweL5DIOdifziXy5YiEs+z3mqq3fL16P9aLBIcOF0C2qLZdpOuH68
+   xHvRgKTRTM1qi739Ia4=
+Received: by smtp1.sender.2gis.com id h6ae4k2erpkp for <recallybot@yandex.ru>; Wed, 17 Jun 2026 13:08:26 +0000 (envelope-from <postman5920583@sender.2gis.com>)
+From: =?UTF-8?B?MtCT0JjQoSDQtNC70Y8g0LHQuNC30L3QtdGB0LA=?= <noreply@account.2gis.com>
+To: recallybot@yandex.ru
+Message-Id: <E1wZq0I-ckchad-Ov@ucs732-ucs-9.msgpanel.com>
+Subject: =?UTF-8?B?0JIgMtCT0JjQoSDQvtGB0YLQsNCy0LjQu9C4INGF0L7RgNC+0YjQuNC5?=
+ =?UTF-8?B?INC+0YLQt9GL0LIg0L4g0LLQsNGI0LXQuSDQutC+0LzQv9Cw0L3QuNC4?=
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="MXdacTBJLWNrY2hhZC1Pdg=="
+Feedback-ID: sng_5920583:go1_5920583:do_723:UNISENDER
+List-Unsubscribe: <https://unsubscribe.2gis.com/?e=1557628965&c=false&h=533872f5d6bdd03d4dc10323ae380208>
+X-Complaints-To: abuse@sender.2gis.com
+X-EnvId: go1production.tr_5920583:1wZq0F-000v4T-CEBL:1_cmVjYWxseWJvdEB5YW5kZXgucnU=_5_5920583_bm9yZXBseUBhY2NvdW50LjJnaXMuY29t_0
+Date: Wed, 17 Jun 2026 13:08:26 +0000
+Return-Path: postman5920583@sender.2gis.com
+X-Yandex-Forward: 05c5ed2a6f5fce6b0f24872fa2f39e45
+
+--MXdacTBJLWNrY2hhZC1Pdg==
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_138106_1978238733.1781701706567"
+
+------=_Part_138106_1978238733.1781701706567
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: base64
+
+4oCKCgrQniDQutC+0LzQv9Cw0L3QuNC4INCd0Y7QsNC90YEg0L3QsNC/0LjRgdCw0LvQuCDRhdC+
+0YDQvtGI0LjQuSDQvtGC0LfRi9CyCgrQmtC40YDQuNC70LvQuyDQnNCw0YDRjNGP0YHQvtCyCgrQ
+kiDQstC+0YHRgtC+0YDQs9C1INC+0YIg0L3QvtCy0L7Qs9C+INC80LXRgdGC0LAg0L3QsCDRgdGC
+0L7Qu9C10YjQutC1LCDRg9Cy0LXRgNC10L0sINGN0YLQviDRgdGC0LDQvdC10YIg0L3QvtCy0L7Q
+uSDRgtC+0YfQutC+0Lkg0L/RgNC40YLRj9C20LXQvdC40Y/QpNGA0LDQvdGG0YPQt9GB0LrQsNGP
+INCw0LLRgtC+0YDRgdC60LDRjyDQutGD0YXQvdGPIC0g0LzQvtGRINC/0L7Rhy4uLgoK0KfQuNGC
+0LDRgtGMINC/0L7Qu9C90L7RgdGC0YzRjiAoaHR0cHM6Ly9zZW5kZXIuMmdpcy5jb20vcnUvZ28x
+X2xpbmtfdHJhY2tlcj9oYXNoPTZwOTY5Z3dnd202dHFnYzFtd3k0YmNobmY2Ym54dXFydGh4ZWZm
+b3BiNXV1ejk2cDc0Y2NpNHpqaHF6aTQ1ZzVhNjlidWZpaGo0Y2hvYWRnbTM2ejg0Y3hudXp6dXhw
+aXpqMzRpb3VrZ3NiZDZyODZham53NG8xM3o3N2pycnJrNWl0Y3NkcTF1eWVnejNqem4zcGRoYTg4
+aWQ5c3dpYnFjOWVwanB1Z2JlbnFoNmJkdWpzbmNuNHp4dWhmbmlzZWhraTRiejdiNGk0YWVqeWtx
+bnA5ZnpicTV3bTF3d3lmNXBjNmVpeXM1cHg5cjVlZndwdWJwMWtjOTRuMzFnaWNrMzE4MXRtNDM3
+bjNzbXRkbWJkaTZkbjlxZGkzZ2pmaXl3czYzZHRxdTF3OHVpcHRycGp4eSZ1cmw9YUhSMGNITTZM
+eTloWTJOdmRXNTBMakpuYVhNdVkyOXRMMmR2TDJZeFl6QXpZbUpsTkRrelpXSTNOVE00WW1ZMU9E
+VXdZVGhrTkdZME1XSmlNMk16WW1Rd1lqTX4mdWlkPU5Ua3lNRFU0TXd+fiZ1Y3M9YjdjZmZiZDBj
+ODkxMmViY2NjZTA4YThjOGZlMTlhZTIpCgrigIoKCuKAigoK0J/QvtC00LXQu9C40YLQtdGB0Ywg
+0L7RgtC30YvQstC+0Lwg0LIg0YHQvtGG0LjQsNC70YzQvdGL0YUg0YHQtdGC0Y/RhSDRgSDQv9C+
+0LzQvtGJ0YzRjiDQvdC+0LLQvtCz0L4g0L/RgNC40LvQvtC20LXQvdC40Y8gMtCT0JjQoSDQtNC7
+0Y8g0LHQuNC30L3QtdGB0LAg4oCUINCU0LXQu9C+CgrQkdGD0LTQtdGCINC30LTQvtGA0L7QstC+
+LCDQtdGB0LvQuCDQstGLINC/0L7QsdC70LDQs9C+0LTQsNGA0LjRgtC1INC60LvQuNC10L3RgtCw
+INCyINC+0YLQstC10YIuINCb0Y7QtNC4INC00L7QstC10YDRj9GO0YIg0LrQvtC80L/QsNC90LjR
+j9C8LCDQutC+0YLQvtGA0YvQtSDQvtGC0LLQtdGH0LDRjtGCINC90LAg0L7RgtC30YvQstGLLCDQ
+uCDRh9Cw0YnQtSDQstGL0LHQuNGA0LDRjtGCINC40YUuCgrQldGB0LvQuCDQstGLINC30LDRgtGA
+0YPQtNC90Y/QtdGC0LXRgdGMINGBINC+0YLQstC10YLQvtC8LCDQvNGLINC/0L7QtNGB0LrQsNC2
+0LXQvCDQsiDQm9C40YfQvdC+0Lwg0LrQsNCx0LjQvdC10YLQtSDRgSDQv9C+0LzQvtGJ0YzRjiDQ
+vdC10YHQutC+0LvRjNC60LjRhSDQv9C+0LTRhdC+0LTRj9GJ0LjRhSDQv9GA0LjQvNC10YDQvtCy
+LgoK0J7RgtCy0LXRgtC40YLRjCDQvdCwINC+0YLQt9GL0LIKCtCj0L/RgNCw0LLQu9GP0LnRgtC1
+INGB0LLQvtC10Lkg0LrQvtC80L/QsNC90LjQtdC5INCyIDLQk9CY0KEg0LIg0L/RgNC40LvQvtC2
+0LXQvdC40LggwqvQlNC10LvQvsK7CgrQo9C/0YDQsNCy0LvRj9C50YLQtSDRgdCy0L7QtdC5INC6
+0L7QvNC/0LDQvdC40LXQuSDQsiAy0JPQmNChINCyINC/0YDQuNC70L7QttC10L3QuNC4IMKr0JTQ
+tdC70L7CuwoK0JXRgdC70Lgg0YMg0LLQsNGBINCy0L7Qt9C90LjQutC70Lgg0LLQvtC/0YDQvtGB
+0YssINC90LDQv9C40YjQuNGC0LUg0L3QsNC8IChtYWlsdG86ZmVlZGJhY2tAYWNjb3VudC4yZ2lz
+LmNvbSkuINCV0YHQu9C4INCy0Ysg0L3QtSDRhdC+0YLQuNGC0LUg0L/QvtC70YPRh9Cw0YLRjCDQ
+v9C+0LTQvtCx0L3Ri9C1INC/0LjRgdGM0LzQsCwg0L/QtdGA0LXQudC00LjRgtC1INC/0L4g0YHR
+gdGL0LvQutC1IChodHRwczovL3NlbmRlci4yZ2lzLmNvbS9ydS9nbzFfbGlua190cmFja2VyP2hh
+c2g9Nmt1aHpncm96cHh5d2FjMW13eTRiY2huZjZibnh1cXJ0aHhlZmZvcGI1dXV6OTZwNzRjY2k0
+empocXppNDVnNWE2OWJ1ZmloajRjaG9hZGdtMzZ6ODRjeG51enp1eHBpemozNGlvdWtnc2JkNnI4
+NmFqbnc0bzEzejc3anJycms1aXRjc2RxMXV5ZWd6M2p6bjNwZGhhODhpZDlzd2licWM5ZXBqcHVn
+YmVucWg2YmR1anNuY240enh1aGZuaXNlaGtpNGJ6N2I0aTRhZWp5a3FucDlmemJxNXdtMXd3eWY1
+cGM2ZWl5czVweDlyNWVmd3B1YnAxa2M5NG4zMWdpY2tqc3E2ZTRqZGJtamhocGc0aTN1OTFvMXFk
+aTdjeHk1N3VkN2thcXh0YTZ4YzN1NHlmMXV5JnVybD1hSFIwY0hNNkx5OTFibk4xWW5OamNtbGla
+UzR5WjJsekxtTnZiUzhfWlQweE5UVTNOakk0T1RZMUptTTlkSEoxWlNab1BURTNNakpoT1RFNVl6
+VmlNREV6TUdWaFpUUmtOMlV6T1Rnd01HUmhOalZsJnVpZD1OVGt5TURVNE13fn4mdWNzPTgzNzM0
+ZGY1ZDE0ODViMzgyY2ViYWM3NGUzMzI0NTYzKS4KCuKAig==
+------=_Part_138106_1978238733.1781701706567
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html lang=3D"und" dir=3D"auto" xmlns=3D"http://www.w3.org/1999/xhtml" xmln=
+s:v=3D"urn:schemas-microsoft-com:vml"
+  xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+
+<head>
+  <title></title><!--[if !mso]><!-->
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"><!--<![endif]-=
+->
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1">
+  <style type=3D"text/css">
+    #outlook a,
+    body {
+      padding: 0
+    }
+
+    body {
+      margin: 0;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%
+    }
+
+    table,
+    td {
+      border-collapse: collapse;
+      mso-table-lspace: 0;
+      mso-table-rspace: 0
+    }
+
+    img {
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+      -ms-interpolation-mode: bicubic
+    }
+
+    p {
+      display: block;
+      margin: 13px 0
+    }
+  </style><!--[if mso]>
+    <noscript>
+    <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+    </xml>
+    </noscript>
+    <![endif]--><!--[if lte mso 11]>
+    <style type=3D"text/css">
+      .mj-outlook-group-fix { width:100% !important; }
+    </style>
+    <![endif]--><!--[if !mso]><!-->
+  <link href=3D"https://fonts.googleapis.com/css?family=3DUbuntu:300,400,50=
+0,700" rel=3D"stylesheet" type=3D"text/css">
+  <style type=3D"text/css">
+    @import url(https://fonts.googleapis.com/css?family=3DUbuntu:300,400,50=
+0,700);
+  </style><!--<![endif]-->
+  <style type=3D"text/css">
+    @media only screen and (min-width:480px) {
+      .mj-column-per-100 {
+        max-width: 100%;
+        width: 100% !important
+      }
+    }
+  </style>
+  <style media=3D"screen and (min-width:480px)">
+    .moz-text-html .mj-column-per-100 {
+      max-width: 100%;
+      width: 100% !important
+    }
+  </style>
+  <style type=3D"text/css">
+    [owa] .mj-column-per-100 {
+      max-width: 100%;
+      width: 100% !important
+    }
+  </style>
+  <style type=3D"text/css">
+    .topImage>table {
+      width: 100%
+    }
+
+    .borderTop {
+      background: red
+    }
+
+    .button a {
+      border-radius: 6px;
+      display: inline-block;
+      padding: 18px 0;
+      width: 100%
+    }
+
+    @media (max-width:560px) {
+      .breakNoMobile {
+        display: none !important
+      }
+    }
+
+    @media (max-width:480px) {
+      .body {
+        padding-left: 12px !important;
+        padding-right: 12px !important
+      }
+
+      .section>table>tbody>tr>td {
+        padding: 0 !important
+      }
+
+      .bottomPadding {
+        padding-bottom: 10px !important
+      }
+
+      .header {
+        padding: 24px 0 0 !important
+      }
+
+      #logo2gis {
+        padding-bottom: 30px !important;
+        width: 200px
+      }
+
+      #logoBizaccount {
+        font-size: 14px !important;
+        line-height: 18px !important;
+        margin-top: 5px !important
+      }
+
+      .cardBlock>table>tbody>tr>td {
+        padding-bottom: 10px !important
+      }
+
+      .titleContainer {
+        padding-bottom: 8px !important;
+        padding-top: 0 !important
+      }
+
+      #title {
+        font-size: 18px;
+        line-height: 28px
+      }
+
+      .text {
+        font-size: 14px !important;
+        line-height: 22px !important
+      }
+
+      .button table {
+        width: 100% !important
+      }
+
+      .button a {
+        padding: 18px 0 !important
+      }
+
+      #buttonText {
+        font-size: 16px !important
+      }
+
+      .section.bottomButton>table>tbody>tr>td {
+        padding-bottom: 0 !important;
+        padding-top: 0 !important
+      }
+
+      .tableRowDesktop {
+        display: none !important
+      }
+
+      .tableRowMobile {
+        display: block !important
+      }
+
+      #footerText {
+        font-size: 12px;
+        line-height: 16px
+      }
+
+      .stars div {
+        display: none !important;
+        font-size: 0 !important;
+        line-height: 0 !important;
+        max-height: 0 !important;
+        padding: 0 !important
+      }
+
+      .share {
+        vertical-align: top
+      }
+    }
+  </style>
+</head>
+
+<body style=3D"background-color:#f3f1f2;word-spacing:normal">
+  <div class=3D"body" style=3D"background-color:#f3f1f2" lang=3D"und" dir=
+=3D"auto">
+    <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;"=
+ width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-hei=
+ght-rule:exactly;"><![endif]-->
+    <div style=3D"margin:0 auto;max-width:600px">
+      <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"width:100%">
+        <tbody>
+          <tr>
+            <td style=3D"direction:ltr;font-size:0;padding:0;text-align:cen=
+ter">
+              <!--[if mso | IE]><table role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-ali=
+gn:top;width:600px;" ><![endif]-->
+              <div class=3D"mj-column-per-100 mj-outlook-group-fix"
+                style=3D"direction:ltr;display:inline-block;font-size:0;tex=
+t-align:left;vertical-align:top;width:100%">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"vertical-align:top"
+                  width=3D"100%">
+                  <tbody>
+                    <tr>
+                      <td style=3D"font-size:0;word-break:break-word">
+                        <div style=3D"height:24px;line-height:24px">&#8202;=
+</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div> <!--[if mso | IE]></td></tr></table><![endif]-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div> <!--[if mso | IE]></td></tr></table><![endif]-->
+    <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" class=3D"section-outlook" role=3D"presentation" style=
+=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size=
+:0px;mso-line-height-rule:exactly;"><![endif]-->
+    <div class=3D"section" style=3D"margin:0 auto;max-width:600px">
+      <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"width:100%">
+        <tbody>
+          <tr>
+            <td style=3D"direction:ltr;font-size:0;padding:25px 30px 0;text=
+-align:center">
+              <!--[if mso | IE]><table role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-ali=
+gn:top;width:540px;" ><![endif]-->
+              <div class=3D"mj-column-per-100 mj-outlook-group-fix"
+                style=3D"direction:ltr;display:inline-block;font-size:0;tex=
+t-align:left;vertical-align:top;width:100%">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"vertical-align:top"
+                  width=3D"100%">
+                  <tbody>
+                    <tr>
+                      <td align=3D"left" class=3D"header" style=3D"font-siz=
+e:0;padding:0;word-break:break-word">
+                        <table cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" border=3D"0"
+                          style=3D"border:none;color:#000;font-family:Ubunt=
+u,Helvetica,Arial,sans-serif;font-size:13px;line-height:22px;table-layout:a=
+uto;width:100%">
+                          <tr>
+                            <td style=3D"text-align:left"> <a id=3D"logoBiz=
+account" target=3D"_blank" align=3D"left"
+                                href=3D"https://sender.2gis.com/ru/go1_link=
+_tracker?hash=3D69e5nouz5c693ac1mwy4bchnf6bnxuqrthxeffopb5uuz96p74cci4zjhqz=
+i45g5a69bufihj4choadgm36z84cxnuzzuxpizj34ioukgsbd6r86ajnw4o13z77jrrrk5itcsd=
+q1uyegz3jzn3pdha88id9swibqc9epjpugbenqh6bdujsncn4zxuhfnisehki4bz7b4i4aejykq=
+np9fzbq5wm1wwyf5pc6eiys5px9r5efwpubp1kc94n31gick9uncqhhzmhrs59j11aiqyokijzh=
+dkkn1qorfk9msgwfhi5f7g7ay&url=3DaHR0cHM6Ly9hY2NvdW50LjJnaXMuY29tLw~~&uid=3D=
+NTkyMDU4Mw~~&ucs=3De8bbfb286510244104fdd54eafd72267"> <img id=3D"logo2gis" =
+width=3D"262px" height=3D"52px"
+                                  src=3D"https://disk.2gis.com/mailer/6dbd0=
+a08a3bc2539c1eccfa8b1ebcc27.png"> </a> </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div> <!--[if mso | IE]></td></tr></table><![endif]-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div> <!--[if mso | IE]></td></tr></table><![endif]-->
+    <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" class=3D"section-outlook" role=3D"presentation" style=
+=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size=
+:0px;mso-line-height-rule:exactly;"><![endif]-->
+    <div class=3D"section" style=3D"margin:0 auto;max-width:600px">
+      <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"width:100%">
+        <tbody>
+          <tr>
+            <td style=3D"direction:ltr;font-size:0;padding:14px 30px 0;text=
+-align:center">
+              <!--[if mso | IE]><table role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"cardBlock-outlook" styl=
+e=3D"vertical-align:top;width:540px;" ><![endif]-->
+              <div class=3D"cardBlock mj-column-per-100 mj-outlook-group-fi=
+x"
+                style=3D"direction:ltr;display:inline-block;font-size:0;tex=
+t-align:left;vertical-align:top;width:100%">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" width=3D"100%">
+                  <tbody>
+                    <tr>
+                      <td style=3D"padding:7px 0 18px;vertical-align:top">
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"100%">
+                          <tbody>
+                            <tr>
+                              <td align=3D"left" class=3D"titleContainer"
+                                style=3D"font-size:0;padding:10px 0 12px;wo=
+rd-break:break-word">
+                                <div
+                                  style=3D"color:#1a1a1a;font-family:Helvet=
+ica;font-size:24px;font-weight:400;line-height:32px;text-align:left">
+                                  <div id=3D"title">=D0=9E&nbsp;=D0=BA=D0=
+=BE=D0=BC=D0=BF=D0=B0=D0=BD=D0=B8=D0=B8 <b>=D0=9D=D1=8E=D0=B0=D0=BD=D1=81</=
+b> =D0=BD=D0=B0=D0=BF=D0=B8=D1=81=D0=B0=D0=BB=D0=B8 =D1=85=D0=BE=D1=80=D0=
+=BE=D1=88=D0=B8=D0=B9 =D0=BE=D1=82=D0=B7=D1=8B=D0=B2</div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align=3D"left" style=3D"font-size:0;paddi=
+ng:0;word-break:break-word">
+                                <table cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"100%" border=3D"0"
+                                  style=3D"border:none;color:#000;font-fami=
+ly:Ubuntu,Helvetica,Arial,sans-serif;font-size:13px;line-height:22px;table-=
+layout:auto;width:100%">
+                                   </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div> <!--[if mso | IE]></td></tr></table><![endif]-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" class=3D"section-outlook" role=3D"pre=
+sentation" style=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-heig=
+ht:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+    <div class=3D"section" style=3D"margin:0 auto;max-width:600px">
+      <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"width:100%">
+        <tbody>
+          <tr>
+            <td style=3D"direction:ltr;font-size:0;padding:0 30px;text-alig=
+n:center">
+              <!--[if mso | IE]><table role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-ali=
+gn:top;width:540px;" ><![endif]-->
+              <div class=3D"mj-column-per-100 mj-outlook-group-fix"
+                style=3D"direction:ltr;display:inline-block;font-size:0;tex=
+t-align:left;vertical-align:top;width:100%">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" width=3D"100%">
+                  <tbody>
+                    <tr>
+                      <td style=3D"background-color:#fff;border-radius:18px=
+;padding:24px;vertical-align:top">
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"100%">
+                          <tbody>
+                            <tr>
+                              <td align=3D"left" style=3D"font-size:0;paddi=
+ng:0 0 12px;word-break:break-word">
+                                <table cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"100%" border=3D"0"
+                                  style=3D"border:none;color:#000;font-fami=
+ly:Ubuntu,Helvetica,Arial,sans-serif;font-size:13px;line-height:22px;table-=
+layout:auto;width:100%">
+                                  <tr>
+                                    <td style=3D"width:30px" rowspan=3D"2">=
+ <img
+                                        style=3D"border-radius:50%;height:3=
+0px;vertical-align:middle;width:30px"
+                                        src=3D"https://disk.2gis.com/mailer=
+/3dc5e6062c9be686cbe38d0576195e6c.png">
+                                    </td>
+                                    <td style=3D"width:12px"> </td>
+                                    <td
+                                      style=3D"font-family:Helvetica;font-s=
+ize:16px;font-weight:700;line-height:24px;vertical-align:middle">
+                                      <mj-text> <span>=D0=9A=D0=B8=D1=80=D0=
+=B8=D0=BB=D0=BB=D0=BB =D0=9C=D0=B0=D1=80=D1=8C=D1=8F=D1=81=D0=BE=D0=B2</spa=
+n> </mj-text>
+                                    </td>
+                                    <td style=3D"width:12px"> </td>
+                                    <td class=3D"stars" style=3D"text-align=
+:right;vertical-align:middle;white-space:nowrap">
+                                       <img
+                                        src=3D"https://disk.2gis.com/mailer=
+/da4c269728c1678632b1590dabb9f4df.png"
+                                        width=3D"16px" height=3D"15px" styl=
+e=3D"vertical-align:middle">  <img
+                                        src=3D"https://disk.2gis.com/mailer=
+/da4c269728c1678632b1590dabb9f4df.png"
+                                        width=3D"16px" height=3D"15px" styl=
+e=3D"vertical-align:middle">  <img
+                                        src=3D"https://disk.2gis.com/mailer=
+/da4c269728c1678632b1590dabb9f4df.png"
+                                        width=3D"16px" height=3D"15px" styl=
+e=3D"vertical-align:middle">  <img
+                                        src=3D"https://disk.2gis.com/mailer=
+/da4c269728c1678632b1590dabb9f4df.png"
+                                        width=3D"16px" height=3D"15px" styl=
+e=3D"vertical-align:middle">  <img
+                                        src=3D"https://disk.2gis.com/mailer=
+/da4c269728c1678632b1590dabb9f4df.png"
+                                        width=3D"16px" height=3D"15px" styl=
+e=3D"vertical-align:middle">  </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align=3D"left" style=3D"font-size:0;paddi=
+ng:0;word-break:break-word">
+                                <div
+                                  style=3D"color:#1a1a1a;font-family:Helvet=
+ica;font-size:16px;line-height:24px;text-align:left">
+                                  <div class=3D"text">=D0=92 =D0=B2=D0=BE=
+=D1=81=D1=82=D0=BE=D1=80=D0=B3=D0=B5 =D0=BE=D1=82 =D0=BD=D0=BE=D0=B2=D0=BE=
+=D0=B3=D0=BE =D0=BC=D0=B5=D1=81=D1=82=D0=B0 =D0=BD=D0=B0 =D1=81=D1=82=D0=BE=
+=D0=BB=D0=B5=D1=88=D0=BA=D0=B5, =D1=83=D0=B2=D0=B5=D1=80=D0=B5=D0=BD, =D1=
+=8D=D1=82=D0=BE =D1=81=D1=82=D0=B0=D0=BD=D0=B5=D1=82 =D0=BD=D0=BE=D0=B2=D0=
+=BE=D0=B9 =D1=82=D0=BE=D1=87=D0=BA=D0=BE=D0=B9 =D0=BF=D1=80=D0=B8=D1=82=D1=
+=8F=D0=B6=D0=B5=D0=BD=D0=B8=D1=8F
+=D0=A4=D1=80=D0=B0=D0=BD=D1=86=D1=83=D0=B7=D1=81=D0=BA=D0=B0=D1=8F =D0=B0=
+=D0=B2=D1=82=D0=BE=D1=80=D1=81=D0=BA=D0=B0=D1=8F =D0=BA=D1=83=D1=85=D0=BD=
+=D1=8F - =D0=BC=D0=BE=D1=91 =D0=BF=D0=BE=D1=87...</div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align=3D"left" style=3D"font-size:0;paddi=
+ng:12px 0 0;word-break:break-word">
+                                <div
+                                  style=3D"color:#1a1a1a;font-family:Helvet=
+ica;font-size:16px;line-height:24px;text-align:left">
+                                  <div class=3D"text"> <a style=3D"color:#1=
+b61e1;text-decoration:none"
+                                      href=3D"https://sender.2gis.com/ru/go=
+1_link_tracker?hash=3D6p969gwgwm6tqgc1mwy4bchnf6bnxuqrthxeffopb5uuz96p74cci=
+4zjhqzi45g5a69bufihj4choadgm36z84cxnuzzuxpizj34ioukgsbd6r86ajnw4o13z77jrrrk=
+5itcsdq1uyegz3jzn3pdha88id9swibqc9epjpugbenqh6bdujsncn4zxuhfnisehki4bz7b4i4=
+aejykqnp9fzbq5wm1wwyf5pc6eiys5px9r5efwpubp1kc94n31gick3181tm437n3smtdmbdi6d=
+n9qdi3gjfiyws63dtqu1w8uiptrpjxy&url=3DaHR0cHM6Ly9hY2NvdW50LjJnaXMuY29tL2dvL=
+2YxYzAzYmJlNDkzZWI3NTM4YmY1ODUwYThkNGY0MWJiM2MzYmQwYjM~&uid=3DNTkyMDU4Mw~~&=
+ucs=3Db7cffbd0c8912ebccce08a8c8fe19ae2"> =D0=A7=D0=B8=D1=82=D0=B0=D1=82=D1=
+=8C =D0=BF=D0=BE=D0=BB=D0=BD=D0=BE=D1=81=D1=82=D1=8C=D1=8E </a> </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style=3D"font-size:0;word-break:break-wor=
+d">
+                                <div style=3D"height:24px;line-height:24px"=
+>&#8202;</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align=3D"center" style=3D"font-size:0;pad=
+ding:0;word-break:break-word">
+                                <p style=3D"border-top:1px solid #d3d3d3;fo=
+nt-size:1px;margin:0 auto;width:100%"> </p> <!--[if mso | IE]><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"borde=
+r-top:solid 1px lightgrey;font-size:1px;margin:0px auto;width:492px;" role=
+=3D"presentation" width=3D"492px" ><tr><td style=3D"height:0;line-height:0;=
+"> &nbsp;
+</td></tr></table><![endif]-->
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style=3D"font-size:0;word-break:break-wor=
+d">
+                                <div style=3D"height:24px;line-height:24px"=
+>&#8202;</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align=3D"left" style=3D"font-size:0;paddi=
+ng:0;word-break:break-word">
+                                <table cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"100%" border=3D"0"
+                                  style=3D"border:none;color:#000;font-fami=
+ly:Ubuntu,Helvetica,Arial,sans-serif;font-size:13px;line-height:22px;table-=
+layout:auto;width:100%">
+                                  <tr>
+                                    <td width=3D"26px" class=3D"share" styl=
+e=3D"padding:0"> <a href=3D"https://sender.2gis.com/ru/go1_link_tracker?has=
+h=3D6hgc16fknthjioc1mwy4bchnf6bnxuqrthxeffopb5uuz96p74cci4zjhqzi45g5a69bufi=
+hj4choadgm36z84cxnuzzuxpizj34ioukgsbd6r86ajnw4o13z77jrrrk5itcsdq1uyegz3jzn3=
+pdha88id9swibqc9epjpugbenqh6bdujsncn4zxuhfnisehki4bz7b4i4aejykqnp9fzbq5wm1w=
+wyf5pc6eiys5px9r5efwpubp1kc94n31gickbpob49ww715omjwraoebt4eitb3gjfiyws63dtq=
+u1w8uiptrpjxy&url=3DaHR0cHM6Ly9kZWxvYXBwLnBhZ2UubGluay9ZOXp4bjRGc0hBR3F1U3F=
+UNg~~&uid=3DNTkyMDU4Mw~~&ucs=3D9e4e3b0663d7be0e2bfebfdcaed25452">
+                                        <div style=3D"padding:0 9px 0 0"> <=
+img width=3D"26px" height=3D"28px"
+                                            src=3D"https://disk.2gis.com/ma=
+iler/af705c479f18de7d5ced0a7a955e0231.png">
+                                        </div>
+                                      </a> </td>
+                                    <td
+                                      style=3D"color:#5b5b5b;font-family:He=
+lvetica;font-size:12px;line-height:18px;padding:0;width:200px">
+                                      <a href=3D"https://sender.2gis.com/ru=
+/go1_link_tracker?hash=3D6qf3sho345iktec1mwy4bchnf6bnxuqrthxeffopb5uuz96p74=
+cci4zjhqzi45g5a69bufihj4choadgm36z84cxnuzzuxpizj34ioukgsbd6r86ajnw4o13z77jr=
+rrk5itcsdq1uyegz3jzn3pdha88id9swibqc9epjpugbenqh6bdujsncn4zxuhfnisehki4bz7b=
+4i4aejykqnp9fzbq5wm1wwyf5pc6eiys5px9r5efwpubp1kc94n31gick3f4mrk3k1iaf9jwrao=
+ebt4eitb3gjfiyws63dtqu1w8uiptrpjxy&url=3DaHR0cHM6Ly9kZWxvYXBwLnBhZ2UubGluay=
+9ZOXp4bjRGc0hBR3F1U3FUNg~~&uid=3DNTkyMDU4Mw~~&ucs=3D9e4e3b0663d7be0e2bfebfd=
+caed25452" style=3D"color:#5b5b5b;text-decoration:none">
+                                        <div style=3D"padding:0 20px 0 0">=
+=D0=9F=D0=BE=D0=B4=D0=B5=D0=BB=D0=B8=D1=82=D0=B5=D1=81=D1=8C =D0=BE=D1=82=
+=D0=B7=D1=8B=D0=B2=D0=BE=D0=BC =D0=B2&nbsp;=D1=81=D0=BE=D1=86=D0=B8=D0=B0=
+=D0=BB=D1=8C=D0=BD=D1=8B=D1=85 =D1=81=D0=B5=D1=82=D1=8F=D1=85
+                                          =D1=81&nbsp;=D0=BF=D0=BE=D0=BC=D0=
+=BE=D1=89=D1=8C=D1=8E =D0=BD=D0=BE=D0=B2=D0=BE=D0=B3=D0=BE =D0=BF=D1=80=D0=
+=B8=D0=BB=D0=BE=D0=B6=D0=B5=D0=BD=D0=B8=D1=8F 2=D0=93=D0=98=D0=A1 =D0=B4=D0=
+=BB=D1=8F =D0=B1=D0=B8=D0=B7=D0=BD=D0=B5=D1=81=D0=B0&nbsp;&mdash; <span
+                                            style=3D"color:#1b61e1">=D0=94=
+=D0=B5=D0=BB=D0=BE</span></div>
+                                      </a>
+                                    </td>
+                                    <td class=3D"shareButton" style=3D"text=
+-align:right;vertical-align:middle;width:24px">
+                                      <a href=3D"https://sender.2gis.com/ru=
+/go1_link_tracker?hash=3D685a1ju4xbmxagc1mwy4bchnf6bnxuqrthxeffopb5uuz96p74=
+cci4zjhqzi45g5a69bufihj4choadgm36z84cxnuzzuxpizj34ioukgsbd6r86ajnw4o13z77jr=
+rrk5itcsdq1uyegz3jzn3pdha88id9swibqc9epjpugbenqh6bdujsncn4zxuhfnisehki4bz7b=
+4i4aejykqnp9fzbq5wm1wwyf5pc6eiys5px9r5efwpubp1kc94n31gicktdanzkz1s6ehijwrao=
+ebt4eitb3gjfiyws63dtqu1w8uiptrpjxy&url=3DaHR0cHM6Ly9kZWxvYXBwLnBhZ2UubGluay=
+9ZOXp4bjRGc0hBR3F1U3FUNg~~&uid=3DNTkyMDU4Mw~~&ucs=3D9e4e3b0663d7be0e2bfebfd=
+caed25452">
+                                        <div> <img
+                                            src=3D"https://disk.2gis.com/ma=
+iler/cfbaf1524191019008ce5e7344a5617d.png"
+                                            width=3D"24px" height=3D"24px">=
+ </div>
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div> <!--[if mso | IE]></td></tr></table><![endif]-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div> <!--[if mso | IE]></td></tr></table><![endif]-->
+    <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" class=3D"section-outlook" role=3D"presentation" style=
+=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size=
+:0px;mso-line-height-rule:exactly;"><![endif]-->
+    <div class=3D"section" style=3D"margin:0 auto;max-width:600px">
+      <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"width:100%">
+        <tbody>
+          <tr>
+            <td style=3D"direction:ltr;font-size:0;padding:0 30px;text-alig=
+n:center">
+              <!--[if mso | IE]><table role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-ali=
+gn:top;width:540px;" ><![endif]-->
+              <div class=3D"mj-column-per-100 mj-outlook-group-fix"
+                style=3D"direction:ltr;display:inline-block;font-size:0;tex=
+t-align:left;vertical-align:top;width:100%">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" width=3D"100%">
+                  <tbody>
+                    <tr>
+                      <td style=3D"padding:0 0 30px;vertical-align:top">
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"100%">
+                          <tbody>
+                            <tr>
+                              <td align=3D"left" style=3D"font-size:0;paddi=
+ng:24px 0 0;word-break:break-word">
+                                <div
+                                  style=3D"color:#1a1a1a;font-family:Helvet=
+ica;font-size:18px;line-height:28px;text-align:left">
+                                  <div class=3D"text"> =D0=91=D1=83=D0=B4=
+=D0=B5=D1=82 =D0=B7=D0=B4=D0=BE=D1=80=D0=BE=D0=B2=D0=BE, =D0=B5=D1=81=D0=BB=
+=D0=B8 =D0=B2=D1=8B&nbsp;=D0=BF=D0=BE=D0=B1=D0=BB=D0=B0=D0=B3=D0=BE=D0=B4=
+=D0=B0=D1=80=D0=B8=D1=82=D0=B5 =D0=BA=D0=BB=D0=B8=D0=B5=D0=BD=D1=82=D0=B0 =
+=D0=B2&nbsp;=D0=BE=D1=82=D0=B2=D0=B5=D1=82.
+                                    =D0=9B=D1=8E=D0=B4=D0=B8 =D0=B4=D0=BE=
+=D0=B2=D0=B5=D1=80=D1=8F=D1=8E=D1=82 =D0=BA=D0=BE=D0=BC=D0=BF=D0=B0=D0=BD=
+=D0=B8=D1=8F=D0=BC, =D0=BA=D0=BE=D1=82=D0=BE=D1=80=D1=8B=D0=B5 =D0=BE=D1=82=
+=D0=B2=D0=B5=D1=87=D0=B0=D1=8E=D1=82 =D0=BD=D0=B0&nbsp;=D0=BE=D1=82=D0=B7=
+=D1=8B=D0=B2=D1=8B, =D0=B8&nbsp;=D1=87=D0=B0=D1=89=D0=B5
+                                    =D0=B2=D1=8B=D0=B1=D0=B8=D1=80=D0=B0=D1=
+=8E=D1=82&nbsp;=D0=B8=D1=85. </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align=3D"left" style=3D"font-size:0;paddi=
+ng:12px 0 25px;word-break:break-word">
+                                <div
+                                  style=3D"color:#1a1a1a;font-family:Helvet=
+ica;font-size:18px;line-height:28px;text-align:left">
+                                  <div class=3D"text"> =D0=95=D1=81=D0=BB=
+=D0=B8 =D0=B2=D1=8B&nbsp;=D0=B7=D0=B0=D1=82=D1=80=D1=83=D0=B4=D0=BD=D1=8F=
+=D0=B5=D1=82=D0=B5=D1=81=D1=8C =D1=81&nbsp;=D0=BE=D1=82=D0=B2=D0=B5=D1=82=
+=D0=BE=D0=BC, =D0=BC=D1=8B&nbsp;=D0=BF=D0=BE=D0=B4=D1=81=D0=BA=D0=B0=D0=B6=
+=D0=B5=D0=BC
+                                    =D0=B2&nbsp;=D0=9B=D0=B8=D1=87=D0=BD=D0=
+=BE=D0=BC =D0=BA=D0=B0=D0=B1=D0=B8=D0=BD=D0=B5=D1=82=D0=B5 =D1=81&nbsp;=D0=
+=BF=D0=BE=D0=BC=D0=BE=D1=89=D1=8C=D1=8E =D0=BD=D0=B5=D1=81=D0=BA=D0=BE=D0=
+=BB=D1=8C=D0=BA=D0=B8=D1=85 =D0=BF=D0=BE=D0=B4=D1=85=D0=BE=D0=B4=D1=8F=D1=
+=89=D0=B8=D1=85 =D0=BF=D1=80=D0=B8=D0=BC=D0=B5=D1=80=D0=BE=D0=B2. </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align=3D"center" class=3D"button"
+                                style=3D"font-size:0;padding:5px 2px 0;word=
+-break:break-word">
+                                <table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" role=3D"presentation"
+                                  style=3D"border-collapse:separate;line-he=
+ight:100%;width:100%">
+                                  <tbody>
+                                    <tr>
+                                      <td align=3D"center" bgcolor=3D"#125D=
+E5" role=3D"presentation"
+                                        style=3D"border:none;border-radius:=
+6px;cursor:auto;height:60px;mso-padding-alt:0;background:#125de5"
+                                        valign=3D"middle"> <a href=3D"https=
+://sender.2gis.com/ru/go1_link_tracker?hash=3D6iah8itcf5h7uhc1mwy4bchnf6bnx=
+uqrthxeffopb5uuz96p74cci4zjhqzi45g5a69bufihj4choadgm36z84cxnuzzuxpizj34iouk=
+gsbd6r86ajnw4o13z77jrrrk5itcsdq1uyegz3jzn3pdha88id9swibqc9epjpugbenqh6bdujs=
+ncn4zxuhfnisehki4bz7b4i4aejykqnp9fzbq5wm1wwyf5pc6eiys5px9r5efwpubp1kc94n31g=
+ickgx99xko6t3ymxtdmbdi6dn9qdi3gjfiyws63dtqu1w8uiptrpjxy&url=3DaHR0cHM6Ly9hY=
+2NvdW50LjJnaXMuY29tL2dvL2YxYzAzYmJlNDkzZWI3NTM4YmY1ODUwYThkNGY0MWJiM2MzYmQw=
+YjM~&uid=3DNTkyMDU4Mw~~&ucs=3Db7cffbd0c8912ebccce08a8c8fe19ae2"
+                                          style=3D"background:#125de5;color=
+:#fff;display:inline-block;font-family:Helvetica;font-size:13px;font-weight=
+:400;line-height:120%;margin:0;padding:0;text-decoration:none;text-transfor=
+m:none;mso-padding-alt:0;border-radius:6px"
+                                          target=3D"_blank"> <span id=3D"bu=
+ttonText"
+                                            style=3D"color:#fff;font-size:2=
+0px;line-height:30px">=D0=9E=D1=82=D0=B2=D0=B5=D1=82=D0=B8=D1=82=D1=8C =D0=
+=BD=D0=B0 =D0=BE=D1=82=D0=B7=D1=8B=D0=B2</span>
+                                        </a> </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div> <!--[if mso | IE]></td></tr></table><![endif]-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div> <!--[if mso | IE]></td></tr></table><![endif]-->
+    <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" class=3D"section-outlook" role=3D"presentation" style=
+=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size=
+:0px;mso-line-height-rule:exactly;"><![endif]-->
+    <div class=3D"section" style=3D"margin:0 auto;max-width:600px">
+      <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"width:100%">
+        <tbody>
+          <tr>
+            <td style=3D"direction:ltr;font-size:0;padding:0 30px 45px;text=
+-align:center">
+              <!--[if mso | IE]><table role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-ali=
+gn:top;width:540px;" ><![endif]-->
+              <div class=3D"mj-column-per-100 mj-outlook-group-fix"
+                style=3D"direction:ltr;display:inline-block;font-size:0;tex=
+t-align:left;vertical-align:top;width:100%">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" width=3D"100%">
+                  <tbody>
+                    <tr>
+                      <td style=3D"background-color:#fff;border-radius:18px=
+;padding:24px;vertical-align:top">
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"100%">
+                          <tbody>
+                            <tr>
+                              <td align=3D"left" style=3D"font-size:0;paddi=
+ng:0 0 12px;word-break:break-word">
+                                <table cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"100%" border=3D"0"
+                                  style=3D"border:none;color:#000;font-fami=
+ly:Ubuntu,Helvetica,Arial,sans-serif;font-size:13px;line-height:22px;table-=
+layout:auto;width:100%">
+                                  <tr class=3D"tableRowDesktop">
+                                    <td style=3D"font-family:Helvetica;font=
+-size:16px;line-height:24px"> <mj-text>
+                                        <div style=3D"margin:0 0 18px">=D0=
+=A3=D0=BF=D1=80=D0=B0=D0=B2=D0=BB=D1=8F=D0=B9=D1=82=D0=B5 =D1=81=D0=B2=D0=
+=BE=D0=B5=D0=B9 =D0=BA=D0=BE=D0=BC=D0=BF=D0=B0=D0=BD=D0=B8=D0=B5=D0=B9 =D0=
+=B2&nbsp;2=D0=93=D0=98=D0=A1
+                                          =D0=B2&nbsp;=D0=BF=D1=80=D0=B8=D0=
+=BB=D0=BE=D0=B6=D0=B5=D0=BD=D0=B8=D0=B8 &laquo;=D0=94=D0=B5=D0=BB=D0=BE&raq=
+uo;</div>
+                                      </mj-text> <a href=3D"https://sender.=
+2gis.com/ru/go1_link_tracker?hash=3D6g79eiepnf6rkcc1mwy4bchnf6bnxuqrthxeffo=
+pb5uuz96p74cci4zjhqzi45g5a69bufihj4choadgm36z84cxnuzzuxpizj34ioukgsbd6r86aj=
+nw4o13z77jrrrk5itcsdq1uyegz3jzn3pdha88id9swibqc9epjpugbenqh6bdujsncn4zxuhfn=
+isehki4bz7b4i4aejykqnp9fzbq5wm1wwyf5pc6eiys5px9r5efwpubp1kc94n31gickntmeqyb=
+19bco3wxmytmkguuxkdhdkkn1qorfk9msgwfhi5f7g7ay&url=3DaHR0cHM6Ly9kZWxvLm9uZWx=
+pbmsubWUvckljNC84M2lsZzF6Mw~~&uid=3DNTkyMDU4Mw~~&ucs=3Daf8fa6c4f85caa3736db=
+7535430060b4"
+                                        style=3D"font-size:34px;text-decora=
+tion:none"> <img width=3D"61" height=3D"30"
+                                          src=3D"https://disk.2gis.com/mail=
+er/f830caba4189f56410ce227b498107ab.png"> </a>
+                                      <a href=3D"https://sender.2gis.com/ru=
+/go1_link_tracker?hash=3D67x7rpmqi5kq6kc1mwy4bchnf6bnxuqrthxeffopb5uuz96p74=
+cci4zjhqzi45g5a69bufihj4choadgm36z84cxnuzzuxpizj34ioukgsbd6r86ajnw4o13z77jr=
+rrk5itcsdq1uyegz3jzn3pdha88id9swibqc9epjpugbenqh6bdujsncn4zxuhfnisehki4bz7b=
+4i4aejykqnp9fzbq5wm1wwyf5pc6eiys5px9r5efwpubp1kc94n31gicki98jq5by9tw3xwxmyt=
+mkguuxkdhdkkn1qorfk9msgwfhi5f7g7ay&url=3DaHR0cHM6Ly9kZWxvLm9uZWxpbmsubWUvck=
+ljNC84M2lsZzF6Mw~~&uid=3DNTkyMDU4Mw~~&ucs=3Daf8fa6c4f85caa3736db7535430060b=
+4"
+                                        style=3D"font-size:34px;text-decora=
+tion:none"> <img width=3D"87" height=3D"30"
+                                          src=3D"https://disk.2gis.com/mail=
+er/d352e4d997cd9b592eb41612f4587d35.png"> </a>
+                                    </td>
+                                    <td style=3D"width:12px"> </td>
+                                    <td style=3D"text-align:right;vertical-=
+align:middle;white-space:nowrap"> <img
+                                        src=3D"https://disk.2gis.com/mailer=
+/3a0ffcffdf3b5f94295122c1970be93e.png"
+                                        width=3D"100" height=3D"100" style=
+=3D"height:100px;vertical-align:middle;width:100px">
+                                    </td>
+                                  </tr>
+                                  <tr style=3D"display:none" class=3D"table=
+RowMobile">
+                                    <td style=3D"text-align:right;vertical-=
+align:middle;white-space:nowrap"> <img
+                                        src=3D"https://disk.2gis.com/mailer=
+/3a0ffcffdf3b5f94295122c1970be93e.png"
+                                        width=3D"100" height=3D"100" style=
+=3D"height:100px;vertical-align:middle;width:100px">
+                                    </td>
+                                  </tr>
+                                  <tr style=3D"display:none" class=3D"table=
+RowMobile">
+                                    <td style=3D"font-family:Helvetica;font=
+-size:16px;line-height:24px"> <mj-text>
+                                        <div style=3D"margin:12px 0">=D0=A3=
+=D0=BF=D1=80=D0=B0=D0=B2=D0=BB=D1=8F=D0=B9=D1=82=D0=B5 =D1=81=D0=B2=D0=BE=
+=D0=B5=D0=B9 =D0=BA=D0=BE=D0=BC=D0=BF=D0=B0=D0=BD=D0=B8=D0=B5=D0=B9 =D0=B2&=
+nbsp;2=D0=93=D0=98=D0=A1
+                                          =D0=B2&nbsp;=D0=BF=D1=80=D0=B8=D0=
+=BB=D0=BE=D0=B6=D0=B5=D0=BD=D0=B8=D0=B8 &laquo;=D0=94=D0=B5=D0=BB=D0=BE&raq=
+uo;</div>
+                                      </mj-text> <a href=3D"https://sender.=
+2gis.com/ru/go1_link_tracker?hash=3D6kwp1ehbfxkdqgc1mwy4bchnf6bnxuqrthxeffo=
+pb5uuz96p74cci4zjhqzi45g5a69bufihj4choadgm36z84cxnuzzuxpizj34ioukgsbd6r86aj=
+nw4o13z77jrrrk5itcsdq1uyegz3jzn3pdha88id9swibqc9epjpugbenqh6bdujsncn4zxuhfn=
+isehki4bz7b4i4aejykqnp9fzbq5wm1wwyf5pc6eiys5px9r5efwpubp1kc94n31gickxree1ia=
+m7pmp7wxmytmkguuxkdhdkkn1qorfk9msgwfhi5f7g7ay&url=3DaHR0cHM6Ly9kZWxvLm9uZWx=
+pbmsubWUvckljNC84M2lsZzF6Mw~~&uid=3DNTkyMDU4Mw~~&ucs=3Daf8fa6c4f85caa3736db=
+7535430060b4"
+                                        style=3D"font-size:34px;text-decora=
+tion:none"> <img width=3D"61" height=3D"30"
+                                          src=3D"https://disk.2gis.com/mail=
+er/f830caba4189f56410ce227b498107ab.png"> </a>
+                                      <a href=3D"https://sender.2gis.com/ru=
+/go1_link_tracker?hash=3D6ffipescomk8twc1mwy4bchnf6bnxuqrthxeffopb5uuz96p74=
+cci4zjhqzi45g5a69bufihj4choadgm36z84cxnuzzuxpizj34ioukgsbd6r86ajnw4o13z77jr=
+rrk5itcsdq1uyegz3jzn3pdha88id9swibqc9epjpugbenqh6bdujsncn4zxuhfnisehki4bz7b=
+4i4aejykqnp9fzbq5wm1wwyf5pc6eiys5px9r5efwpubp1kc94n31gickx6d3kabgzsbefpfubr=
+418qj4r73gjfiyws63dtqu1w8uiptrpjxy&url=3DaHR0cHM6Ly9kZWxvLm9uZWxpbmsubWUvck=
+ljNC84M2lsZzF6Mw~~&uid=3DNTkyMDU4Mw~~&ucs=3Daf8fa6c4f85caa3736db7535430060b=
+4"
+                                        style=3D"font-size:34px;text-decora=
+tion:none"> <img width=3D"87" height=3D"30"
+                                          src=3D"https://disk.2gis.com/mail=
+er/d352e4d997cd9b592eb41612f4587d35.png"> </a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align=3D"left" class=3D"footerContainer"
+                                style=3D"font-size:0;padding:0;word-break:b=
+reak-word">
+                                <div
+                                  style=3D"color:#8a8a8a;font-family:Helvet=
+ica;font-size:14px;line-height:20px;text-align:left">
+                                  <div id=3D"footerText"> =D0=95=D1=81=D0=
+=BB=D0=B8 =D1=83 =D0=B2=D0=B0=D1=81 =D0=B2=D0=BE=D0=B7=D0=BD=D0=B8=D0=BA=D0=
+=BB=D0=B8 =D0=B2=D0=BE=D0=BF=D1=80=D0=BE=D1=81=D1=8B, <a
+                                      style=3D"color:#414144;text-decoratio=
+n:none"
+                                      href=3D"mailto:feedback@account.2gis.=
+com">=D0=BD=D0=B0=D0=BF=D0=B8=D1=88=D0=B8=D1=82=D0=B5 =D0=BD=D0=B0=D0=BC</a=
+>. =D0=95=D1=81=D0=BB=D0=B8 =D0=B2=D1=8B =D0=BD=D0=B5 =D1=85=D0=BE=D1=82=D0=
+=B8=D1=82=D0=B5
+                                    =D0=BF=D0=BE=D0=BB=D1=83=D1=87=D0=B0=D1=
+=82=D1=8C =D0=BF=D0=BE=D0=B4=D0=BE=D0=B1=D0=BD=D1=8B=D0=B5 =D0=BF=D0=B8=D1=
+=81=D1=8C=D0=BC=D0=B0, =D0=BF=D0=B5=D1=80=D0=B5=D0=B9=D0=B4=D0=B8=D1=82=D0=
+=B5 =D0=BF=D0=BE <a style=3D"color:#414144;text-decoration:none"
+                                      href=3D"https://sender.2gis.com/ru/go=
+1_link_tracker?hash=3D6kuhzgrozpxywac1mwy4bchnf6bnxuqrthxeffopb5uuz96p74cci=
+4zjhqzi45g5a69bufihj4choadgm36z84cxnuzzuxpizj34ioukgsbd6r86ajnw4o13z77jrrrk=
+5itcsdq1uyegz3jzn3pdha88id9swibqc9epjpugbenqh6bdujsncn4zxuhfnisehki4bz7b4i4=
+aejykqnp9fzbq5wm1wwyf5pc6eiys5px9r5efwpubp1kc94n31gickjsq6e4jdbmjhhpg4i3u91=
+o1qdi7cxy57ud7kaqxta6xc3u4yf1uy&url=3DaHR0cHM6Ly91bnN1YnNjcmliZS4yZ2lzLmNvb=
+S8_ZT0xNTU3NjI4OTY1JmM9dHJ1ZSZoPTE3MjJhOTE5YzViMDEzMGVhZTRkN2UzOTgwMGRhNjVl=
+&uid=3DNTkyMDU4Mw~~&ucs=3D83734df5d1485b382cebac74e3324563">=D1=81=D1=81=D1=
+=8B=D0=BB=D0=BA=D0=B5</a>. </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div> <!--[if mso | IE]></td></tr></table><![endif]-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" styl=
+e=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-siz=
+e:0px;mso-line-height-rule:exactly;"><![endif]-->
+    <div style=3D"margin:0 auto;max-width:600px">
+      <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"width:100%">
+        <tbody>
+          <tr>
+            <td style=3D"direction:ltr;font-size:0;padding:0;text-align:cen=
+ter">
+              <!--[if mso | IE]><table role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-ali=
+gn:top;width:600px;" ><![endif]-->
+              <div class=3D"mj-column-per-100 mj-outlook-group-fix"
+                style=3D"direction:ltr;display:inline-block;font-size:0;tex=
+t-align:left;vertical-align:top;width:100%">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"vertical-align:top"
+                  width=3D"100%">
+                  <tbody>
+                    <tr>
+                      <td style=3D"font-size:0;word-break:break-word">
+                        <div style=3D"height:24px;line-height:24px">&#8202;=
+</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div> <!--[if mso | IE]></td></tr></table><![endif]-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div> <!--[if mso | IE]></td></tr></table><![endif]-->
+  </div>
+<center><table><tr><td><img src=3D"https://sender.2gis.com/ru/go1_read_trac=
+ker/5920583?hash=3D6fpnh69hz5zjhjiccf3nzeuo9ajnxuqrthxeffopb5uuz96p74cci4zj=
+hqzi45g5a69bufihj4choadgm36z84cxnuzzuxpizj34ioukgsbd6r86ajnw4o13z77jrrrk5it=
+csdq1uyegz3jzn3pdha88id9swibqc9epjpugbenqh6bdujsncn4zxuhfnisehki4bz7b4i4aej=
+ykqnp9fzbq5wm1wwyf5pc6eiys5px9r5efwpubp1kc94n31gick4g3rcbsc8w7nkskkbqr85k17=
+3c" width=3D"1" height=3D"1" alt=3D"" title=3D"" border=3D"0"></td></tr></t=
+able></center></body>
+
+</html>
+------=_Part_138106_1978238733.1781701706567--
+
+--MXdacTBJLWNrY2hhZC1Pdg==--
