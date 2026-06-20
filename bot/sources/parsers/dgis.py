@@ -22,7 +22,7 @@ class DgisParser:
         if "отзыв" in (msg.subject or "").lower():
             return True
         h = msg.html or ""
-        return 'class="stars"' in h or 'class="text"' in h
+        return 'class="stars"' in h
 
     def parse(self, msg: MailMessage) -> Review | None:
         try:
