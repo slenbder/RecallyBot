@@ -1,0 +1,19 @@
+services:
+  recallybot:
+    build: .
+    container_name: recallybot
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      # Override DB_PATH so the SQLite file lands on the mounted volume and
+      # survives rebuilds/redeploys (otherwise dedup resets and the group gets
+      # flooded with already-seen reviews).
+      DB_PATH: /data/reviews.db
+    volumes:
+      - ./data:/data
+    # No ports: the bot only makes outbound connections (IMAP + Telegram).
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

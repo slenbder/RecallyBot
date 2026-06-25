@@ -1,0 +1,18 @@
+# Secrets & local state — never bake into the image
+.env
+*.db
+data/
+
+# Client data (real restaurant name/address/review text in fixtures)
+tests/
+
+# Local tooling
+.venv/
+__pycache__/
+*.pyc
+.git/
+.gitignore
+.pytest_cache/
+README.md
+deploy/
+*.egg-info/
