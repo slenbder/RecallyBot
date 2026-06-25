@@ -31,34 +31,37 @@ def process_message(mb: MailBox, msg, storage: Storage) -> None:
         mark_seen(mb, msg)
         return
 
-    if parser is None:
-        # Unknown sender in the folder — raw fallback (rare).
-        # Dedup by Message-ID so a crash between send and mark_seen never double-sends.
+    def _raw_fallback() -> None:
         raw_key = "raw|" + (msg.headers.get("message-id", [msg.uid])[0])
         if storage.is_new_key(raw_key):
             send_raw(hint, msg.subject or "(no subject)")
         else:
             log.info("Duplicate raw fallback skipped (uid=%s)", msg.uid)
+
+    if parser is None:
+        # Unknown sender in the folder — raw fallback (rare).
+        # Dedup by Message-ID so a crash between send and mark_seen never double-sends.
+        _raw_fallback()
     else:
-        review = None
+        reviews = []
         try:
-            review = parser.parse(msg)
+            reviews = parser.parse(msg)
         except Exception:
             log.exception("Parser %s raised for uid=%s", parser.source, msg.uid)
 
-        if review is None:
-            # Looked like a review but parse failed — raw fallback.
-            raw_key = "raw|" + (msg.headers.get("message-id", [msg.uid])[0])
-            if storage.is_new_key(raw_key):
-                send_raw(hint, msg.subject or "(no subject)")
-            else:
-                log.info("Duplicate raw fallback skipped (uid=%s)", msg.uid)
-        elif storage.is_new(review):
-            send_review(review)
+        if not reviews:
+            # Looked like a review but parse returned nothing — raw fallback.
+            _raw_fallback()
         else:
-            log.info("Duplicate review skipped (uid=%s)", msg.uid)
+            # Send each new review; if any send raises, abort without marking seen
+            # so the whole email is retried. Already-sent reviews dedup out next pass.
+            for review in reviews:
+                if storage.is_new(review):
+                    send_review(review)
+                else:
+                    log.info("Duplicate review skipped (uid=%s)", msg.uid)
 
-    # Mark seen ONLY after a successful Telegram send (invariant #1)
+    # Mark seen ONLY after the whole list is processed without exception (invariant #1)
     mark_seen(mb, msg)
 
 

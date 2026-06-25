@@ -13,5 +13,5 @@ class Parser(Protocol):
     def is_review(self, msg: MailMessage) -> bool:
         ...
 
-    def parse(self, msg: MailMessage) -> Review | None:
+    def parse(self, msg: MailMessage) -> list[Review]:
         ...

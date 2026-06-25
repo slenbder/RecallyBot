@@ -24,15 +24,17 @@ class DgisParser:
         soup = get_html_soup(msg)
         return soup is not None and soup.select_one("td.stars") is not None
 
-    def parse(self, msg: MailMessage) -> Review | None:
+    def parse(self, msg: MailMessage) -> list[Review]:
         try:
-            return self._parse(msg)
+            review = self._parse(msg)
+            return [review] if review is not None else []
         except Exception:
             log.exception("DgisParser raised for uid=%s", getattr(msg, "uid", "?"))
-            return None
+            return []
 
     def _parse(self, msg: MailMessage) -> Review | None:
-        text = get_plain_text(msg)
+        plain = get_plain_text(msg)
+        text = plain.replace("\r\n", "\n").replace("\r", "\n")
         blocks = [b.strip() for b in re.split(r"\n{2,}", text) if b.strip()]
 
         header_idx = None
@@ -98,8 +100,10 @@ def _decode_tracker_url(tracker_url: str) -> str:
 
 
 def _extract_rating(soup) -> int | None:
-    # ASSUMPTION pending a low-rating sample — we don't yet know
-    # the empty-star hash or whether 4★ renders as 4 imgs or 5. Validate later.
+    # 2GIS always renders exactly 5 <img> tags in td.stars regardless of rating:
+    # filled star hash: da4c269728c1678632b1590dabb9f4df
+    # empty  star hash: da6adc9504b90b97bb3e48b35b3230b3
+    # Counting only filled imgs gives the exact rating (confirmed on 1★ and 5★ samples).
     if soup is None:
         return None
     td = soup.select_one("td.stars")

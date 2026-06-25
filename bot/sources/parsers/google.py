@@ -11,6 +11,6 @@ class GoogleParser:
     def is_review(self, msg: MailMessage) -> bool:
         return False
 
-    def parse(self, msg: MailMessage) -> Review | None:
+    def parse(self, msg: MailMessage) -> list[Review]:
         # TODO: implement once real .eml fixtures are available
-        return None
+        return []
