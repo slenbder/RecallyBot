@@ -25,6 +25,26 @@ _MONTHS = [
 
 _API_BASE = "https://api.telegram.org/bot{token}/sendMessage"
 
+# Overrides settings.telegram_chat_id for the lifetime of the process when
+# Telegram reports a supergroup migration.  Operator should update .env; this
+# keeps the bot alive until they do.
+_chat_id_override: str | None = None
+
+
+def _current_chat_id() -> str:
+    return _chat_id_override if _chat_id_override is not None else settings.telegram_chat_id
+
+
+def _extract_migration_id(resp: httpx.Response) -> str | None:
+    """Return the new chat_id from a supergroup-migration 400, or None."""
+    if resp.status_code != 400:
+        return None
+    try:
+        new_id = resp.json().get("parameters", {}).get("migrate_to_chat_id")
+        return str(new_id) if new_id is not None else None
+    except Exception:
+        return None
+
 
 def _escape(text: str) -> str:
     return html.escape(text)
@@ -97,14 +117,27 @@ def send_raw(source_hint: str, subject: str) -> None:
 
 
 def send_text(msg: str) -> None:
+    global _chat_id_override
     url = _API_BASE.format(token=settings.telegram_bot_token)
     payload = {
-        "chat_id": settings.telegram_chat_id,
+        "chat_id": _current_chat_id(),
         "text": msg,
         "parse_mode": "HTML",
         "disable_web_page_preview": True,
     }
     resp = httpx.post(url, json=payload, timeout=15)
+
     if not resp.is_success:
-        log.error("Telegram send failed: %s %s", resp.status_code, resp.text)
-    resp.raise_for_status()
+        new_id = _extract_migration_id(resp)
+        if new_id is not None:
+            log.warning(
+                "Telegram chat migrated to supergroup; new chat_id=%s. "
+                "Update TELEGRAM_CHAT_ID in .env to persist this.",
+                new_id,
+            )
+            _chat_id_override = new_id
+            resp = httpx.post(url, json={**payload, "chat_id": new_id}, timeout=15)
+
+        if not resp.is_success:
+            log.error("Telegram send failed: %s %s", resp.status_code, resp.text)
+            resp.raise_for_status()
