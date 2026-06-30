@@ -13,7 +13,7 @@ log = logging.getLogger(__name__)
 
 @contextmanager
 def open_mailbox() -> Generator[MailBox, None, None]:
-    with MailBox(settings.imap_host, settings.imap_port).login(
+    with MailBox(settings.imap_host, settings.imap_port, timeout=settings.imap_timeout_seconds).login(
         settings.imap_user, settings.imap_password, settings.imap_mailbox
     ) as mb:
         yield mb

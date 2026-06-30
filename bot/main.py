@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import logging
+import os
+import threading
 import time
 from datetime import datetime, timezone, timedelta
 
@@ -18,6 +20,22 @@ logging.basicConfig(
 )
 logging.getLogger("httpx").setLevel(logging.WARNING)
 log = logging.getLogger(__name__)
+
+_last_progress: float = time.monotonic()
+
+
+def watchdog_should_exit(last_progress: float, now: float, timeout: float) -> bool:
+    return (now - last_progress) > timeout
+
+
+def _watchdog_thread(timeout: float) -> None:
+    while True:
+        time.sleep(30)
+        if watchdog_should_exit(_last_progress, time.monotonic(), timeout):
+            log.critical(
+                "Watchdog: no IMAP progress for %ds, exiting for restart", int(timeout)
+            )
+            os._exit(1)
 
 
 def process_message(mb: MailBox, msg, storage: Storage) -> None:
@@ -81,6 +99,7 @@ def check_silence(storage: Storage) -> None:
 
 def run_once(storage: Storage) -> None:
     """Fetch all unread mail, process each, update heartbeat."""
+    global _last_progress
     with open_mailbox() as mb:
         messages = fetch_unseen(mb)
         log.info("Fetched %d unread message(s)", len(messages))
@@ -89,6 +108,7 @@ def run_once(storage: Storage) -> None:
                 process_message(mb, msg, storage)
             except Exception:
                 log.exception("Failed to process uid=%s, will retry", msg.uid)
+    _last_progress = time.monotonic()
     storage.record_heartbeat()
     check_silence(storage)
 
@@ -96,6 +116,13 @@ def run_once(storage: Storage) -> None:
 def main() -> None:
     storage = Storage(settings.db_path)
     send_text("✅ Бот запущен")
+
+    t = threading.Thread(
+        target=_watchdog_thread,
+        args=(settings.watchdog_timeout_seconds,),
+        daemon=True,
+    )
+    t.start()
 
     # Invariant #5: catch-up pass before entering IDLE
     log.info("Catch-up: processing unread mail on startup")
