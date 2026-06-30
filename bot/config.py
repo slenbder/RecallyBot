@@ -20,6 +20,8 @@ class Settings(BaseSettings):
     # Behaviour
     poll_fallback_seconds: int = 60
     silence_alert_hours: int = 168
+    watchdog_timeout_seconds: int = 300
+    imap_timeout_seconds: int = 120
 
     # Display
     display_timezone: str = "Europe/Moscow"
